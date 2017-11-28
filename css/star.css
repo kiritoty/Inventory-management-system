@@ -1,0 +1,35 @@
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 50%, #090a0f 100%);
+  overflow: hidden;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  animation: animStar 50s linear infinite;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+ 	animation: animStar 100s linear infinite;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  animation: animStar 150s linear infinite;
+}
+
+@keyframes animStar {
+  from {
+    transform: translate(0px,0px);
+  }
+  to {
+    transform: translate(0px,-2000px);
+  }
+}
