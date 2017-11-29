@@ -13,7 +13,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Dashboard</title>
-		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+		<link rel="stylesheet" type="text/css" href="css/comment.css">
 		<script>
 			var comments = <?php echo json_encode( $rows ) ?>;
 		</script>
@@ -53,11 +53,14 @@
 		</div>
 
 	<div id="main-area">
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+			<div id="comment">	
+			</div>	
+			<div class= "submit">
+				<input type="text" name="newComment"/>
+				<button name="submit">submit</button>
+			</div>
+		</form>
 	</div>
-
-	
-		
-		
-	
 	</body>
 </html>

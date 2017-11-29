@@ -28,14 +28,18 @@ function main(){
 
 function comment() {
 	for(var i = 0; i < comments.length; i++) {
-		var div = document.getElementById("main-area");
-		var input = document.createElement("textarea");
-		var button = document.createElement("button");
-		input.name = "post";
-		input.maxLength = "5000";
-		input.cols = "80";
-		input.rows = "40";
-		div.appendChild(input); //appendChild
-		div.appendChild(button);
+		var div = document.getElementById("comment");
+		var input = document.createElement("input");
+		var date = document.createElement("input");
+		input.className = "commentTextArea";
+		input.readOnly = true;
+		input.maxLength = "255";
+		input.value = comments[i][0] + ". " + comments[i][1];
+		date.className = "date";
+		date.textalign = "right";
+		date.readOnly = true;
+		date.value = "date:" + comments[i][2] + "/" + comments[i][3] + "/" + comments[i][4];
+		div.appendChild(input);
+		div.appendChild(date);
 	}
 }
