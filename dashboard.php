@@ -6,6 +6,13 @@
 	while($row = mysqli_fetch_array($result)){
     	$rows[] = $row;
 	}
+	
+	$sql = 'SELECT * FROM comment';
+	$CommentResult = mysqli_query($db,$sql); 
+	$CommentRows = array();
+	while($row = mysqli_fetch_array($CommentResult)){
+    	$CommentRows[] = $row;
+	}
 ?>
 
 
@@ -16,6 +23,9 @@
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 		<script src="js/dashboard.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+		<script>
+			var comments = <?php echo json_encode( $CommentRows ) ?>;
+		</script>
 
 	</head>
 	<body>
@@ -108,18 +118,7 @@
 			<div id="second_row">
 				<div id="Tasks_Panel">
 					<h4>Tasks Panel</h4>
-					<div class="message-list"> 
-						<a href="#" class="task-list"><span class="badge">1 minutes ago</span>Order #1000 shipped</a>
-						<a href="#" class="task-list"><span class="badge">1 minutes ago</span>Invoice #789 has paid</a>
-						<a href="#" class="task-list"><span class="badge">1 minutes ago</span>Order #9733 is on the way</a>
-						<a href="#" class="task-list"><span class="badge">1 minutes ago</span>Wait for John's payment'</a>
-						<a href="#" class="task-list"><span class="badge">1 minutes ago</span>Order #687 shipped</a>
-					</div>
-					
-
-					
-					
-					
+					<div class="message-list" id="message"> </div>
 				</div>
 			</div>
 			

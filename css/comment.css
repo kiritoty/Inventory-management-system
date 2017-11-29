@@ -4,7 +4,7 @@
 	margin-left: 40px;
 	margin-right: 40px;
 	width: 93%;	
-	height: 400px;
+	height: 500px;
 	box-shadow: 10px 10px 5px #888888;
 	background-color: white;
 	float: left;
@@ -14,25 +14,6 @@
 
 .task-list:hover {
 	background-color: gainsboro;
-}
-
-.commentTextArea{
-	width: 70%;
-	border: none;
-	background-color : transparent;
-	margin-left: 30px;
-	font-size: 20px;
-
-}
-
-
-.date{
-	float: right;
-	font-size: 15px;
-	width: 120px;
-	background-color: rgb(244, 112, 112);
-	text-align: center;
-	color: white;
 }
 
 .submit{

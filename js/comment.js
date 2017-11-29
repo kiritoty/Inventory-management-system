@@ -29,18 +29,16 @@ function main(){
 function comment() {
 	for(var i = 0; i < comments.length; i++) {
 		var div = document.getElementById("comment");
-		var input = document.createElement("input");
-		var date = document.createElement("input");
-		input.className = "commentTextArea";
-		input.readOnly = true;
-		input.maxLength = "255";
-		input.value = comments[i][0] + ". " + comments[i][1];
-		date.className = "date";
-		date.textalign = "right";
-		date.readOnly = true;
-		date.value = comments[i][2] + ":" + comments[i][3] + " " + comments[i][5] + "/" + comments[i][4] + "/" + comments[i][6];
+		var input = document.createElement("a");
+		var date = document.createElement("span");
+		input.className = "task-list";
+		input.innerHTML = comments[i][0] + ". " + comments[i][1];
+		date.className = "badge";
+		date.innerHTML = comments[i][2] + ":" + comments[i][3] + " " + comments[i][5] + "/" + comments[i][4] + "/" + comments[i][6];
 		div.appendChild(input);
-		div.appendChild(date);
+		input.appendChild(date);
 		//document.getElementById("Tasks_Panel-info").style.height = "20px*i"
 	}
+	var scroll = document.getElementById("Tasks_Panel-info");
+	scroll.scrollTop = scroll.scrollHeight;
 }

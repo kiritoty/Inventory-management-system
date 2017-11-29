@@ -96,7 +96,6 @@
 	height: 100%;
 	top: 70px;
 	left:200px;
-	
 	transition: all 500ms linear;
 	background-color:rgb(234, 234, 234);
 	
@@ -186,7 +185,7 @@
 .badge {
 	float: right;
 	padding: 3px 5px;
-	width: 120px;
+	width: 200px;
 	border-radius: 25px;
 	background-color: rgb(244, 112, 112);
 	text-align: center;

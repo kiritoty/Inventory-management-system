@@ -2,10 +2,10 @@
 	include('session.php');
 	include('commentAction.php');
     $sql = 'SELECT * FROM comment';
-	$result = mysqli_query($db,$sql); 
-	$rows = array();
-	while($row = mysqli_fetch_array($result)){
-    	$rows[] = $row;
+	$CommentResult = mysqli_query($db,$sql); 
+	$CommentRows = array();
+	while($row = mysqli_fetch_array($CommentResult)){
+    	$CommentRows[] = $row;
 	}
 ?>
 
@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 		<link rel="stylesheet" type="text/css" href="css/comment.css">
 		<script>
-			var comments = <?php echo json_encode( $rows ) ?>;
+			var comments = <?php echo json_encode( $CommentRows ) ?>;
 		</script>
 		<script src="js/comment.js"></script>
 
