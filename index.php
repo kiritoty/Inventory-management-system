@@ -25,11 +25,11 @@
 				<div class="avatar">
 					<?php echo '<img src="' . $avatar . '"/>';?>
 				</div>
-				<input type="text" placeholder="username" name="username" required>
+				<input type="text" placeholder="username" name="username" value="admin" required>
 				<div class="bar">
 					<i></i>
 				</div>
-				<input type="password" placeholder="password" name="password" required>
+				<input type="password" placeholder="password" name="password" value="admin" required>
 				<button class="wrapButton">Sign in</button>
 				<div class="error">
 					<?php echo $error; ?>

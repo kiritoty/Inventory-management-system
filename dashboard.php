@@ -35,8 +35,8 @@
 	<div id="top-bar">
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Info</a></li>
+				<li><a href="dashboard.php">Home</a></li>
+				<li><a href="comment.php">Info</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>

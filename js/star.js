@@ -1,4 +1,4 @@
-window.onload=SetStarts;
+window.onload = SetStarts;
 
 function SetStarts(){
 	var list = "";
