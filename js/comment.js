@@ -41,5 +41,6 @@ function comment() {
 		date.value = comments[i][2] + ":" + comments[i][3] + " " + comments[i][5] + "/" + comments[i][4] + "/" + comments[i][6];
 		div.appendChild(input);
 		div.appendChild(date);
+		document.getElementById("Tasks_Panel-info").style.height = "20px*i"
 	}
 }

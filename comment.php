@@ -56,7 +56,7 @@
 	<div id="block">
 		<div id="main-area">
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-				<div id="Tasks_Panel">
+				<div id="Tasks_Panel-info">
 					<div id="comment"></div>
 				</div>	
 				<div class= "submit">
