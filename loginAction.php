@@ -1,5 +1,4 @@
 <?php
-   include('loginActionFunction.php');
    $message = "";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       	$itemName = mysqli_real_escape_string($db,$_POST['item']);
@@ -10,8 +9,13 @@
       	$itemMonth = mysqli_real_escape_string($db,$_POST['month']); 
       	$itemYear = mysqli_real_escape_string($db,$_POST['year']); 
       	if(isset($_POST['add'])){
-	    	$sql = "SELECT * FROM product WHERE item = '$itemName'";
-	      	$message = insert($itemName,$itemStorage,$itemUnitPrice,$itemSellPrice,$itemDate,$itemMonth,$itemYear,$message);
+			$sql = "INSERT INTO product (item,storage,unitPrice,sellPrice,date,month,year)
+			VALUES ('$itemName','$itemStorage','$itemUnitPrice','$itemSellPrice','$itemDate','$itemMonth','$itemYear')";
+			if ($db->query($sql) === TRUE) {
+				$message = "New record created successfully";
+			} else {
+				$message = "Error: " . $sql . "<br>" . $db->error;
+			}
       	}else if(isset($_POST['delete'])){
       	  	$sql = "SELECT * FROM product WHERE item = '$itemName'";
 	      	$result = mysqli_query($db,$sql);
@@ -20,7 +24,12 @@
 	      	if($count == 0) {
 	      		$message = "item not exist";
 	      	}else {
-	        	$message = delete($itemName,$message);
+			    $sql = "DELETE FROM product WHERE item = '$itemName'";
+				if ($db->query($sql) === TRUE) {
+					$message = "item $itemName delete.";
+				} else {
+					$message = "Error: " . $sql . "<br>" . $db->error;
+				}
 	      	}
       	}
    }

@@ -1,4 +1,5 @@
 <?php
+	date_default_timezone_set('America/New_York');
    	define('DB_SERVER', 'localhost');
    	define('DB_USERNAME', 'root');
    	define('DB_PASSWORD', '');

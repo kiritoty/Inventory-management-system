@@ -38,7 +38,7 @@ function comment() {
 		date.className = "date";
 		date.textalign = "right";
 		date.readOnly = true;
-		date.value = "date:" + comments[i][2] + "/" + comments[i][3] + "/" + comments[i][4];
+		date.value = comments[i][2] + ":" + comments[i][3] + " " + comments[i][5] + "/" + comments[i][4] + "/" + comments[i][6];
 		div.appendChild(input);
 		div.appendChild(date);
 	}

@@ -1,7 +1,7 @@
 <?php
 	include("manageAccountAction.php");
 ?>
-<html>
+<html html class="html">
 	
 	<head>
 		<meta charset="UTF-8">

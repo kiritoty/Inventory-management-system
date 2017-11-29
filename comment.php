@@ -1,5 +1,6 @@
 <?php
 	include('session.php');
+	include('commentAction.php');
     $sql = 'SELECT * FROM comment';
 	$result = mysqli_query($db,$sql); 
 	$rows = array();
@@ -52,15 +53,19 @@
 			
 		</div>
 
-	<div id="main-area">
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-			<div id="comment">	
-			</div>	
-			<div class= "submit">
-				<input type="text" name="newComment"/>
-				<button name="submit">submit</button>
-			</div>
-		</form>
+	<div id="block">
+		<div id="main-area">
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<div id="Tasks_Panel">
+					<div id="comment"></div>
+				</div>	
+				<div class= "submit">
+					<textarea class ="comment" type="text" name="comment" required></textarea>
+					<button name="submit">submit</button>
+				</div>
+			</form>
+		</div>
 	</div>
+	
 	</body>
 </html>

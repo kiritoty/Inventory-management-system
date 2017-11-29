@@ -2,6 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	font-family: sans-serif;
+	
 }
 
 #side-navagate-bar {
@@ -12,6 +13,7 @@
 	left:0px;
 	transition: all 500ms linear;
 	top: 0px;
+	z-index: 3;
 }
 
 #side-navagate-bar.active {
@@ -56,6 +58,7 @@
 	width:100%;
 	height:70px;
 	background-color: #282828;
+	z-index: 2;
 }
 
 #top-bar ul {
@@ -81,19 +84,22 @@
 }
 
 #block {
-	padding-top: 70px;
+	position: absolute;
+	width: calc(100% - 200px);
+	height: 100%;
 }
 
 #main-area {
 	position: absolute;
 	padding-top: 20px;
 	width: 100%;
-	height: 1000px;
+	height: 100%;
 	top: 70px;
 	left:200px;
+	
 	transition: all 500ms linear;
 	background-color:rgb(234, 234, 234);
-
+	
 	
 }
 #main-area.active {
@@ -108,7 +114,7 @@
 }
 
 #linechar{
-	width: 38%;
+	width: 45%;
 	float: left;
 	background-color: white;
 	margin-left: 40px;
@@ -117,7 +123,7 @@
 }
 
 #barchar{
-	width:38%;
+	width:45%;
 	float: left;
 	margin-left: 20px;
 	background-color: white;
@@ -147,7 +153,7 @@
 
 #mini_board {
 	float: left;
-	width: 15.5%;
+	width: 18%;
 	margin-left: 40px;
 	margin-right: 40px;
 	background-color: white;
@@ -157,17 +163,19 @@
 
 #second_row {
 	height: 30%;
+	
 }
 
 #Tasks_Panel {
 	margin-top: 20px;
 	margin-left: 40px;
 	margin-right: 40px;
-	width: 80%;
-	height: 80%;
+	width: 93%;
+	height: 100%;
 	box-shadow: 10px 10px 5px #888888;
 	background-color: white;
 	float: left;
+
 }
 
 #Tasks_Panel h4 {
@@ -200,8 +208,7 @@
 }
 
 .commentTextArea{
-	width: 80%;
-	cols : 500;
+	width: 70%;
 	border: none;
 	background-color : transparent;
 	margin-left: 30px;
@@ -209,21 +216,27 @@
 }
 
 .date{
-	border: none;
-	background-color : transparent;
-	font-size: 20px;
+	float: right;
+	font-size: 15px;
+	width: 120px;
+	background-color: rgb(244, 112, 112);
+	text-align: center;
+	color: white;
 }
 
 .submit{
 	position: fixed;
+	padding-left: 90px;
     bottom: 0;
-    width: 100%;
+    width: 80%;
 }
-.submit input{
+.submit .comment{
+	border-radius: 15px;
 	width: 80%;
 	font-size: 25px;
-	height: 50px;
+	height: 150px;
 }
+
 
 .submit button{
 	align-items: right;

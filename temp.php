@@ -60,9 +60,10 @@
 			
 		</div>
 
-	<div id="main-area"></div>
+		<div id="block">
+			<div id="main-area"></div>
 
-	
+		</div>
 		
 		
 	

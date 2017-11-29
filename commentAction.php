@@ -1,12 +1,22 @@
 <?php
-	include("config.php");
    	$error = "";
 
    	if($_SERVER["REQUEST_METHOD"] == "POST") {
-		$itemName = mysqli_real_escape_string($db,$_POST['comment']);
+		$myComment = mysqli_real_escape_string($db,$_POST['comment']);
+		$hour = date('H');
+		$minute = date('i');
+		$date = date('d');
+		$month = date('m');
+		$year = date('Y');
       	if(isset($_POST['submit'])){
-	   		$sql = "SELECT * FROM product WHERE item = '$itemName'";
-	      	$message = insert($itemName,$itemStorage,$itemUnitPrice,$itemSellPrice,$itemDate,$itemMonth,$itemYear,$message);
+	      	$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
+	   		VALUES ('$myComment', '$hour', '$minute', '$date', '$month', '$year')";
+	   		if ($db->query($sql) === TRUE) {
+				$message = "New record created successfully";
+				header("comment.php");
+			} else {
+				$message = "Error: " . $sql . "<br>" . $db->error;
+			}
 	    }
    	}
 ?>
