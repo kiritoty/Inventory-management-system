@@ -67,6 +67,30 @@ function createAdmin(){
 		$sql = "INSERT INTO user (username, password, avatar)
 	   	VALUES ('admin', 'admin','img/admin.png')";
 		$conn->query($sql);
+		
+		$hour = date('H');
+		$minute = date('i');
+		$date = date('d');
+		$month = date('m');
+		$year = date('Y');
+		$wrongYear = $year - 5;
+		$wrongMonth = ($month-1 > 0)?($month - 1) : $month;
+		$wrongDate = ($date-10 > 0)?($month - 10) : $date;
+		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
+	   		VALUES ('I love you.', '$hour', '$minute', '$date', '$month', '$wrongYear')";
+		$conn->query($sql);
+		
+		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
+	   		VALUES ('You hate me.', '$hour', '$minute', '$date', '$wrongMonth', '$year')";
+		$conn->query($sql);
+		
+		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
+	   		VALUES ('I kill you and put you in regerator.', '$hour', '$minute', '$wrongDate', '$month', '$year')";
+		$conn->query($sql);
+		
+		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
+	   		VALUES ('it is time to eat.', '$hour', '$minute', '$date', '$month', '$year')";
+		$conn->query($sql);
 	}
 	$conn->close();	
 	$filename = "img/avatar";
