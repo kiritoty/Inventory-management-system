@@ -47,7 +47,9 @@ function createTable(){
 	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 	item VARCHAR(100) NOT NULL,
 	quantity int(10),
-	revenue int(10), 
+	cost int(10),
+	revenue int(10), 	
+	profit int(10),
 	date INT(10),
 	month INT(10),
 	year INT(10)
@@ -77,19 +79,19 @@ function createAdmin(){
 		$wrongMonth = ($month-1 > 0)?($month - 1) : $month;
 		$wrongDate = ($date-10 > 0)?($month - 10) : $date;
 		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
-	   		VALUES ('I love you.', '$hour', '$minute', '$date', '$month', '$wrongYear')";
+	   		VALUES ('我是林琰.', '$hour', '$minute', '$date', '$month', '$wrongYear')";
 		$conn->query($sql);
 		
 		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
-	   		VALUES ('You hate me.', '$hour', '$minute', '$date', '$wrongMonth', '$year')";
+	   		VALUES ('我不是林琰.', '$hour', '$minute', '$date', '$wrongMonth', '$year')";
 		$conn->query($sql);
 		
 		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
-	   		VALUES ('I kill you and put you in regerator.', '$hour', '$minute', '$wrongDate', '$month', '$year')";
+	   		VALUES ('你猜我是不是林琰.', '$hour', '$minute', '$wrongDate', '$month', '$year')";
 		$conn->query($sql);
 		
 		$sql = "INSERT INTO comment (comment, hour, minute, date, month, year)
-	   		VALUES ('it is time to eat.', '$hour', '$minute', '$date', '$month', '$year')";
+	   		VALUES ('哈哈猜错了吧.', '$hour', '$minute', '$date', '$month', '$year')";
 		$conn->query($sql);
 	}
 	$conn->close();	
