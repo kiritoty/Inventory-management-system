@@ -14,7 +14,9 @@
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 			<input type="text" placeholder="id" name="id">
 			<br>
-			<input type="text" placeholder="itemName" name="item" required>
+			<input type="text" placeholder="itemId" name="itemId">
+			<br>
+			<input type="text" placeholder="itemName" name="item">
 			<br>
 			<input type="text" placeholder="storage" name="storage">
 			<br>
@@ -28,9 +30,11 @@
 			<br>
 			<input type="text" placeholder="year" name="year">
 			<br>
+			<input type="text" placeholder="quantity" name="quantity">
 			<button name="add">add</button>
 			<button name="delete">delete</button>
 			<button name="edit">edit</button>
+			<button name="updateSale">updateSale</button>
 		</form>
 		<div>
 			<?php echo $message; ?>

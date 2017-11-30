@@ -44,7 +44,8 @@ function createTable(){
 	$conn->query($sql);
 	
 	$sql = "CREATE TABLE sales (
-	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	itemId int(11),
 	item VARCHAR(100) NOT NULL,
 	quantity int(10),
 	cost int(10),
