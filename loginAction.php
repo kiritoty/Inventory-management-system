@@ -50,9 +50,9 @@
 					    date = '$itemDate',
 					    month = '$itemMonth',
 					    year = '$itemYear'
-					  	WHERE id = '$itemId'";
+					  	WHERE id = '$id'";
 				if ($db->query($sql) === TRUE) {
-					$message = "id $itemId edited.";
+					$message = "id $id edited.";
 				} else {
 					$message = "Error: " . $sql . "<br>" . $db->error;
 				}
