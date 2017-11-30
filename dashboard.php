@@ -67,7 +67,7 @@
 			<ul>
 				<li><h1 id="logo">Logo</h1></li>
 				<li><a href="#">link1</a></li>
-				<li><a href="inventory.php">Inventory</a></li>
+				<li><a href="#">link2</a></li>
 				<li><a href="#">link3</a></li>
 			</ul>
 			

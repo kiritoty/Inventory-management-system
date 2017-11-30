@@ -1,7 +1,7 @@
 <?php
   	$message = "";
    	if($_SERVER["REQUEST_METHOD"] == "POST") {
-   		$Id = mysqli_real_escape_string($db,$_POST['id']);
+   		$id = mysqli_real_escape_string($db,$_POST['id']);
       	$itemName = mysqli_real_escape_string($db,$_POST['item']);
       	$itemStorage = mysqli_real_escape_string($db,$_POST['storage']); 
       	$itemUnitPrice = mysqli_real_escape_string($db,$_POST['unitPrice']);
