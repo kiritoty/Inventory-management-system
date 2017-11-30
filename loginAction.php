@@ -1,6 +1,7 @@
 <?php
-   $message = "";
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+  	$message = "";
+   	if($_SERVER["REQUEST_METHOD"] == "POST") {
+   		$itemId = mysqli_real_escape_string($db,$_POST['id']);
       	$itemName = mysqli_real_escape_string($db,$_POST['item']);
       	$itemStorage = mysqli_real_escape_string($db,$_POST['storage']); 
       	$itemUnitPrice = mysqli_real_escape_string($db,$_POST['unitPrice']);
@@ -31,6 +32,29 @@
 					$message = "Error: " . $sql . "<br>" . $db->error;
 				}
 	      	}
-      	}
-   }
+    	}else if(isset($_POST['edit'])){
+    		$sql = "SELECT * FROM product WHERE id = '$itemId'";
+	      	$result = mysqli_query($db,$sql);
+	      	$row = mysqli_fetch_array($result,MYSQLI_ASSOC); 
+	      	$count = mysqli_num_rows($result);
+	      	if($count == 0) {
+	      		$message = "item not exist";
+	      	}else {
+			    $sql = "UPDATE product SET 
+					    item = '$itemName', 
+					    storage = '$itemStorage', 
+					    unitPrice = '$itemUnitPrice', 
+					    sellPrice = '$itemSellPrice', 
+					    date = '$itemDate',
+					    month = '$itemMonth',
+					    year = '$itemYear'
+					  	WHERE id = '$itemId'";
+				if ($db->query($sql) === TRUE) {
+					$message = "id $itemId edited.";
+				} else {
+					$message = "Error: " . $sql . "<br>" . $db->error;
+				}
+	      	}
+    	}
+   	}
 ?>

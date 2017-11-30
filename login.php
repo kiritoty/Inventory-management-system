@@ -12,6 +12,8 @@
 	<body>
 		<h1>Welcome <?php echo $login_session; ?></h1>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+			<input type="text" placeholder="id" name="id">
+			<br>
 			<input type="text" placeholder="itemName" name="item" required>
 			<br>
 			<input type="text" placeholder="storage" name="storage">
@@ -28,6 +30,7 @@
 			<br>
 			<button name="add">add</button>
 			<button name="delete">delete</button>
+			<button name="edit">edit</button>
 		</form>
 		<div>
 			<?php echo $message; ?>
