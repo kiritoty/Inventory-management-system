@@ -35,7 +35,7 @@
 				}
 	      	}
     	}else if(isset($_POST['edit'])){
-    		$sql = "SELECT * FROM product WHERE id = '$itemId'";
+    		$sql = "SELECT * FROM product WHERE id = '$id'";
 	      	$result = mysqli_query($db,$sql);
 	      	$row = mysqli_fetch_array($result,MYSQLI_ASSOC); 
 	      	$count = mysqli_num_rows($result);
