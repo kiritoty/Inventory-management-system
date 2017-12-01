@@ -12,7 +12,6 @@
 
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 		<link rel="stylesheet" type="text/css" href="css/comment.css">

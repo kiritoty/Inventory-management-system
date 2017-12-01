@@ -18,7 +18,7 @@
 		
       if($count == 1) {
         $_SESSION['login_user'] = $myusername;
-        header("location:login.php");
+        header("location:dashboard.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
