@@ -115,15 +115,15 @@
 	width: 43%;
 	float: left;
 	background-color: white;
-	margin-left: 40px;
-	margin-right: 20px;
+	margin-left: 2%;
+
 	box-shadow: 10px 10px 5px #888888;
 }
 
 #barchar{
 	width:43%;
 	float: left;
-	margin-left: 30px;
+	margin-left: 2%;
 	background-color: white;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -172,8 +172,8 @@
 #mini_board {
 	float: left;
 	width: 18%;
-	margin-left: 40px;
-	margin-right: 40px;
+	margin-left: 2%;
+	margin-right: 2%;
 	background-color: white;
 	box-shadow: 10px 10px 5px #888888;
 }
