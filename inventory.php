@@ -14,6 +14,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Inventory</title>
+		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 		<link rel="stylesheet" type="text/css" href="css/inventory.css">
 		<script type="text/javascript">
 			var products = <?php echo json_encode( $rows ) ?>;
@@ -40,14 +41,14 @@
 				<span></span>
 			</div>
 			<ul>
-				<li><h1 id="logo">Logo</h1></li>
-				<li><a href="#">link1</a></li>
+				<li><h2 id="logo">Inventory Sales Management</h2></li>
+				<li><a href="#">Sales</a></li>
 				<li><a href="inventory.php">Inventory</a></li>
 				<li><a href="#">link3</a></li>
 			</ul>
 		</div>
 
-		<div id="block"></div>
+		<div id="block">
 
 		<div id="main-area">
 			<div id="welcome">
@@ -130,6 +131,7 @@
 			}
 			</script>
 			<div id="Product_Panel"></div>
+		</div>
 		</div>
 	</body>
 
