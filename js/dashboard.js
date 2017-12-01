@@ -51,3 +51,11 @@ function comment() {
 		//document.getElementById("Tasks_Panel-info").style.height = "20px*i"
 	}
 }
+
+function openSales() {
+	confirm("Total sales: ");
+}
+function openIncome() {
+	confirm("Total Income: ");
+}
+

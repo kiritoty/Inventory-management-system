@@ -46,7 +46,7 @@
 		<nav>
 			<ul>
 				<li><a href="dashboard.php">Home</a></li>
-				<li><a href="comment.php">Info</a></li>
+				<li><a href="comment.php">Message</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
@@ -85,22 +85,22 @@
 			
 			<div id="mini_nav">
 				<div id="mini_board">
-					<div class = "mini_font">Sales</div>
+					<div class = "mini_font"><a href="javascript:openSales()">Sales</a></div>
 					<img src="img/sales.png"/>
 				</div>
 				
 				<div id="mini_board">
-					<div class = "mini_font">Income</div>
+					<div class = "mini_font"><a href="javascript:openIncome()">Income</a></div>
 					<img src="img/income.png"/>
 				</div>
 				
 				<div id="mini_board">
-					<div class = "mini_font">OnBoard</div>
+					<div class = "mini_font"><a href="#">OnBoard</a></div>
 					<img src="img/chat.png" />
 				</div>
 				
 				<div id="mini_board">
-					<div class = "mini_font">Profile</div>
+					<div class = "mini_font"><a href="#">Profile</a></div>
 					<?php echo '<img src="' . $avatar . '"/>';?>
 				</div>
 			</div>
@@ -118,7 +118,8 @@
 			<div id="second_row">
 				<div id="Tasks_Panel">
 					<h4>Tasks Panel</h4>
-					<div class="message-list" id="message"> </div>
+					<h4>     </h4>
+					<div id="message"> </div>
 				</div>
 			</div>
 			

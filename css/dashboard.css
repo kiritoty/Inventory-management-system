@@ -1,8 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: sans-serif;
-	
+	font-family: sans-serif;	
 }
 
 #side-navagate-bar {
@@ -113,7 +112,7 @@
 }
 
 #linechar{
-	width: 45%;
+	width: 43%;
 	float: left;
 	background-color: white;
 	margin-left: 40px;
@@ -122,9 +121,9 @@
 }
 
 #barchar{
-	width:45%;
+	width:43%;
 	float: left;
-	margin-left: 20px;
+	margin-left: 30px;
 	background-color: white;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -149,6 +148,26 @@
 	padding-left: 25px;
 }
 
+.mini_font a {
+	text-decoration: none;
+}
+
+.mini_font a:link {
+	color: black;
+}
+
+.mini_font a:visited {
+	color: black;
+}
+
+.mini_font a:hover {
+	color: #F0c330;
+	transition: 0.5s;
+}
+
+.mini_font a.active {
+	color: black;
+}
 
 #mini_board {
 	float: left;
@@ -184,7 +203,6 @@
 
 .badge {
 	float: right;
-	padding: 3px 5px;
 	width: 200px;
 	border-radius: 25px;
 	background-color: rgb(244, 112, 112);
