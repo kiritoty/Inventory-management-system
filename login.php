@@ -1,6 +1,6 @@
 <?php
 	include('session.php');
-	include('loginAction.php');
+	include('inventoryAction.php');
 ?>
 <html>
 
