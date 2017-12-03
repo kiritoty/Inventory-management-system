@@ -1,13 +1,13 @@
 window.onload = comment;
 var callOne = true;
 
-function onecli() {
+function one() {
    	document.getElementById("side-navagate-bar").classList.toggle('active');
 	document.getElementById("main-area").classList.toggle('active');
 	document.getElementById("main-area").style.width = "120%";
 }
 
-function twocli() {
+function two() {
 	document.getElementById("side-navagate-bar").classList.toggle('active');
 	document.getElementById("main-area").classList.toggle('active');
    	document.getElementById("main-area").style.width = "100%";
@@ -15,9 +15,9 @@ function twocli() {
 
 function toggleSideBar(){
    	if(callOne){
-   		onecli();
+   		one();
    	}else{
-   		twocli();
+   		two();
    	}
   	callOne = !callOne;
 }

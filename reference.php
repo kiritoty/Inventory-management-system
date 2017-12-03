@@ -12,7 +12,7 @@
 		<div id='stars'></div>
 		<div id='stars2'></div>
 		<div id='stars3'></div>
-		<p style="color: white;"align="middle">this is created by zhenyu yan, kai deng, yan lin, zou xin zhi</p>
+		<p style="color: white;"align="middle">this is created by zhenyu yan, kai deng, yan lin, zhou xin xin</p>
 	</body>
 
 </html>
