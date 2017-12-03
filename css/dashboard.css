@@ -1,8 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: sans-serif;
-	
+	font-family: sans-serif;	
 }
 
 #side-navagate-bar {
@@ -48,7 +47,7 @@
 }
 
 #logo {
-	padding-left: 35px;
+	padding-left:2px;
 	font-family: "arial black";
 	color: #39ca74;
 }
@@ -86,7 +85,7 @@
 #block {
 	position: absolute;
 	width: calc(100% - 200px);
-	height: 100%;
+	height:calc(100% - 90px);
 }
 
 #main-area {
@@ -96,7 +95,6 @@
 	height: 100%;
 	top: 70px;
 	left:200px;
-	
 	transition: all 500ms linear;
 	background-color:rgb(234, 234, 234);
 	
@@ -114,18 +112,18 @@
 }
 
 #linechar{
-	width: 45%;
+	width: 43%;
 	float: left;
 	background-color: white;
-	margin-left: 40px;
-	margin-right: 20px;
+	margin-left: 2%;
+
 	box-shadow: 10px 10px 5px #888888;
 }
 
 #barchar{
-	width:45%;
+	width:43%;
 	float: left;
-	margin-left: 20px;
+	margin-left: 4%;
 	background-color: white;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -150,12 +148,32 @@
 	padding-left: 25px;
 }
 
+.mini_font a {
+	text-decoration: none;
+}
+
+.mini_font a:link {
+	color: black;
+}
+
+.mini_font a:visited {
+	color: black;
+}
+
+.mini_font a:hover {
+	color: #F0c330;
+	transition: 0.5s;
+}
+
+.mini_font a.active {
+	color: black;
+}
 
 #mini_board {
 	float: left;
 	width: 18%;
-	margin-left: 40px;
-	margin-right: 40px;
+	margin-left: 2%;
+	margin-right: 2%;
 	background-color: white;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -185,22 +203,22 @@
 
 .badge {
 	float: right;
-	padding: 3px 5px;
-	width: 120px;
+	width: 200px;
 	border-radius: 25px;
 	background-color: rgb(244, 112, 112);
 	text-align: center;
 	color: white;
+	
 }
 
 .task-list {
-	display: block;
-	padding: 7px 10px;
+	display: block; 
 	margin-left: 70px;
 	margin-right: 70px;
 	border: 1px solid gainsboro;
 	text-decoration:none;
 	color:#282828;
+
 }
 
 .task-list:hover {
