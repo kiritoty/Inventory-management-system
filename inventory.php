@@ -1,12 +1,13 @@
 <?php
 	include('session.php');
-	include('inventoryAction.php');
     $sql = 'SELECT * FROM product';
 	$result = mysqli_query($db,$sql); 
 	$rows = array();
+	
 	while($row = mysqli_fetch_array($result)){
-    	$rows[] = $row;
+    	$rows[] = $row;	
 	}
+	include('inventoryAction.php');
 ?>
 
 <html>
@@ -54,52 +55,46 @@
 				<h1>Inventory</h1>
 			</div>
 			<div id="addItem">
-				<button name="edit" onclick="edit()">edit</button>
+				<button onclick="edit()">edit</button>
 				<button id="addBtn">Add Item</button>
-				<div id="addModal" onclick="model()" class="modal">
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<div class="modal-body">
-							<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-								<table>
-									<tr>
-										<td>Item Name: </td>
-										<td><input type="text" placeholder="itemName" name="item" required></td>
-									</tr>
-									<tr>
-										<td>Quantity: </td>
-										<td><input type="text" placeholder="storage" name="storage"></td>
-									</tr>
-									<tr>
-										<td>Unit Price: </td>
-										<td><input type="text" placeholder="unitPrice" name="unitPrice"></td>
-									</tr>
-									<tr>
-										<td>Sell Price: </td>
-										<td><input type="text" placeholder="sellPrice" name="sellPrice"></td>
-									</tr>
-									<tr>
-										<td>Date: </td>
-										<td><input type="text" placeholder="date" name="date"></td>
-									</tr>
-									<tr>
-										<td>Month: </td>
-										<td><input type="text" placeholder="month" name="month"></td>
-									</tr>
-									<tr>
-										<td>Year: </td>
-										<td><input type="text" placeholder="year" name="year"></td>
-								</table>
-								<button name="add">add</button>
-								<button name="delete">delete</button>
-								<button name="update">update sales</button>
-							</form>
+				<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+					<button name="edit">submit change</button>
+					<div id="Product_Panel"></div>
+					<div id="addModal" onclick="model()" class="modal">
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<div class="modal-body">
+									<table>
+										<input type="text" placeholder="id" name="id">
+										<br>
+										<input type="text" placeholder="itemId" name="itemId">
+										<br>
+										<input type="text" placeholder="itemName" name="item">
+										<br>
+										<input type="text" placeholder="storage" name="storage">
+										<br>
+										<input type="text" placeholder="unitPrice" name="unitPrice">
+										<br>
+										<input type="text" placeholder="sellPrice" name="sellPrice">
+										<br>
+										<input type="text" placeholder="date" name="date">
+										<br>
+										<input type="text" placeholder="month" name="month">
+										<br>
+										<input type="text" placeholder="year" name="year">
+										<br>
+										<input type="text" placeholder="quantity" name="quantity">
+									</table>
+									<button name="add">add</button>
+									<button name="delete">delete</button>
+									<button name="updateSale">update sales</button>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div>
-					<?php echo $message; ?>
-				</div>
+					<div>
+						<?php echo $message; ?>
+					</div>
+				</form>
 			</div>
 			<br>
 			<script>
@@ -128,8 +123,8 @@
 			        modal.style.display = "none";
 			    }
 			}
+
 			</script>
-			<div id="Product_Panel"></div>
 		</div>
 		</div>
 	</body>

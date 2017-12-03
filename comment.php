@@ -54,26 +54,13 @@
 
 	<div id="block">
 		<div id="main-area">
-			<div id="title">
-				<h1>Message Board</h1>
-			</div>
-			
-			
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-				
 				<div id="Tasks_Panel-info">
-			
-					<h1 id = "me"></h1>
 					<div id="comment"></div>
 				</div>	
-				
 				<div class= "submit">
-					<div id="in">
-						<textarea class ="comment" type="text" name="comment" required></textarea>	
-					</div>
-					<div id="sub-btn">	
-						<button name="submit">submit</button>
-					</div>
+					<textarea class ="comment" type="text" name="comment" required></textarea>
+					<button name="submit">submit</button>
 				</div>
 			</form>
 		</div>

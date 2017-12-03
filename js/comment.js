@@ -31,19 +31,12 @@ function comment() {
 		var div = document.getElementById("comment");
 		var input = document.createElement("a");
 		var date = document.createElement("span");
-		var block = document.createElement("div");
-		
-		
 		input.className = "task-list";
-		block.innerHTML = comments[i][1];
-		
-		
+		input.innerHTML = comments[i][1];
 		date.className = "badge";
 		date.innerHTML = comments[i][2] + ":" + comments[i][3] + " " + comments[i][5] + "/" + comments[i][4] + "/" + comments[i][6];
-		
 		div.appendChild(input);
-		input.appendChild(block);
-		block.appendChild(date);
+		input.appendChild(date);
 		//document.getElementById("Tasks_Panel-info").style.height = "20px*i"
 	}
 	var scroll = document.getElementById("Tasks_Panel-info");

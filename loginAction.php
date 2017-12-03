@@ -62,7 +62,6 @@
     		$result = mysqli_query($db,$sql);
 	      	$row = mysqli_fetch_array($result,MYSQLI_ASSOC); 
 	      	$count = mysqli_num_rows($result);
-	      	echo $row["unitPrice"];
 	      	if($count == 0) {
 	      		$message = "item not exist";
 	      	}else{

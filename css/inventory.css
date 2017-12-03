@@ -133,7 +133,11 @@
 	color:#282828;
 }
 
-
+.hidden{
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+}
 
 
 

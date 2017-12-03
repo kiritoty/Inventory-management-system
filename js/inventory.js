@@ -1,4 +1,4 @@
-window.onload = createTable, createButton;;
+window.onload = createTable;
 
 function createTable() {
 	var table = document.createElement("table");
@@ -52,6 +52,7 @@ function createTable() {
 					break;
 			}
 			output.id = products[i][0] + "." + index;
+			output.name = products[i][0] + index;
 			output.value = products[i][j];
 			output.readOnly = true;
 			output.className = "haha";
@@ -64,12 +65,9 @@ function createTable() {
 
 function edit() {
 	for(var i = 0; i < products.length; i++) {
-		for(var j = 0; j < 8; j++) {
+		for(var j = 1; j < 8; j++) {
 			var index;
 			switch(j) {
-				case 0:
-					index = "myId";
-					break;
 				case 1:
 					index = "itemName";
 					break;

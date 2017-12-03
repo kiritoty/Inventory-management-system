@@ -85,7 +85,7 @@
 #block {
 	position: absolute;
 	width: calc(100% - 200px);
-	height:calc(100% - 90px);
+	height: 100%;
 }
 
 #main-area {
@@ -208,17 +208,16 @@
 	background-color: rgb(244, 112, 112);
 	text-align: center;
 	color: white;
-	
 }
 
 .task-list {
-	display: block; 
+	display: block;
+	padding: 7px 10px;
 	margin-left: 70px;
 	margin-right: 70px;
 	border: 1px solid gainsboro;
 	text-decoration:none;
 	color:#282828;
-
 }
 
 .task-list:hover {
