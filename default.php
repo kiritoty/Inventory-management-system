@@ -34,7 +34,7 @@ function createTable(){
 
 	$sql = "CREATE TABLE comment (
 	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-	comment VARCHAR(255) NOT NULL,
+	comment VARCHAR(10000) NOT NULL,
 	hour VARCHAR(255) NOT NULL,
 	minute VARCHAR(255) NOT NULL,
 	date VARCHAR(255) NOT NULL,
