@@ -13,6 +13,13 @@
 	while($row = mysqli_fetch_array($CommentResult)){
     	$CommentRows[] = $row;
 	}
+	
+	$sql = 'SELECT * FROM sales';
+	$salesResult = mysqli_query($db,$sql); 
+	$salesRows = array();
+	while($row = mysqli_fetch_array($salesResult)){
+    	$salesRows[] = $row;
+	}
 ?>
 
 
@@ -25,6 +32,7 @@
 		<script>
 			var comments = <?php echo json_encode( $CommentRows ) ?>;
 			var products = <?php echo json_encode( $rows ) ?>;
+			var sales = <?php echo json_encode( $salesRows ) ?>;
 		</script>
 
 	</head>
@@ -114,22 +122,240 @@
 			</div>	
 		</div>
 			
-			
 		<script>
+			var myDate = new Date();
+			var month=new Array('Jan','Feb', 'Mar', 'April', 'May', 'Jun', 'Jul', 'Aug','Sep', 'Oct', 'Nov','Dec');
+			var monthNumber=new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+			var setMonth = myDate.getMonth();
+			setMonth += 12;
+			var valueMonth=monthNumber[myDate.getMonth()];
+		
+		
+			var one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0, ten = 0, elev = 0, twel = 0;
+		
+		// get cost
+			for(var i = sales.length-1; i >= 0 ; i--) {
+
+				if(sales[i][8] == monthNumber[(setMonth % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth % 12)] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						twel+= parseInt(sales[i][4]);
+					}
+					if(valueMonth - monthNumber[(setMonth % 12)] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						twel+= parseInt(sales[i][4]);
+					}
+				}
+				
+				if(sales[i][8] == monthNumber[((setMonth - 1) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 1) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						elev+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 1) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						elev+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 2) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 2) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						ten+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 2) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						ten+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 3) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 3) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						nine+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 3) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						nine+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 4) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 4) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						eight+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 4) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						eight+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 5) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 5) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						seven+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 5) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						seven+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 6) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 6) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						six+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 6) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						six+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 7) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 7) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						five+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 7) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						five+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 8) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 8) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						four+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 8) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						four+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 9) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 9) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						three+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 9) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						three+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 10) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 10) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						two+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 10) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						two+= sales[i][4];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 11) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 11) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						one+= sales[i][4];
+					}
+					if(valueMonth - monthNumber[(setMonth - 11) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						one+= sales[i][4];
+					}
+				}
+				
+				
+			}
+			
+			var oneP = 0, twoP = 0, threeP = 0, fourP = 0, fiveP = 0, sixP = 0, sevenP = 0, eightP = 0, nineP = 0, tenP = 0, elevP = 0, twelP = 0;
+			
+			
+			for(var i = sales.length-1; i >= 0 ; i--) {
+
+				if(sales[i][8] == monthNumber[(setMonth % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth % 12)] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						twelP+= parseInt(sales[i][6]);
+					}
+					if(valueMonth - monthNumber[(setMonth % 12)] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						twelP+= parseInt(sales[i][6]);
+					}
+				}
+				
+				if(sales[i][8] == monthNumber[((setMonth - 1) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 1) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						elevP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 1) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						elevP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 2) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 2) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						tenP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 2) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						tenP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 3) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 3) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						nineP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 3) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						nineP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 4) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 4) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						eightP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 4) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						eightP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 5) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 5) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						sevenP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 5) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						sevenP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 6) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 6) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						sixP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 6) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						sixP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 7) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 7) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						fiveP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 7) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						fiveP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 8) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 8) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						fourP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 8) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						fourP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 9) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 9) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						threeP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 9) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						threeP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 10) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 10) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						twoP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 10) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						twoP+= sales[i][6];
+					}
+				}
+				if(sales[i][8] == monthNumber[((setMonth - 11) % 12)] ) {
+					if(valueMonth - monthNumber[(setMonth - 11) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
+						oneP+= sales[i][6];
+					}
+					if(valueMonth - monthNumber[(setMonth - 11) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
+						oneP+= sales[i][6];
+					}
+				}
+				
+				
+			}
 
 		var myChart = {
 		  type: 'line',
 		  data: {
-		    labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun', 'Jul', 'Aug','Sep', 'Oct', 'Nov', 'Dec'],
+		    labels: [month[(setMonth-11) % 12], month[(setMonth-10) % 12], month[(setMonth-9) % 12], month[(setMonth-8) % 12], month[(setMonth-7) % 12], month[(setMonth-6) % 12], month[(setMonth-5) % 12], month[(setMonth-4) % 12],month[(setMonth-3) % 12], month[(setMonth-2) % 12], month[(setMonth-1) % 12], month[setMonth % 12]],
 		    datasets: [{
-		      label: 'Revenue',
-		      data: [12, 19, 3, 17, 6, 3, 7, 9, 10, 14, 17, 16],
+		      label: 'Profit',
+		      data: [oneP, twoP, threeP, fourP, fiveP, sixP, sevenP, eightP, nineP, tenP, elevP, twelP],
 		     
 		      backgroundColor: "rgba(104, 163, 221, 0.5)"
 		      
 		    }, {
-		      label: 'Expend',
-		      data: [2, 29, 5, 5, 2, 3, 10, 7, 8, 10, 9, 14],
+		      label: 'Cost',
+		      data: [one, two, three, four, five, six, seven, eight, nine, ten, elev, twel],
 		      backgroundColor: "rgba(245, 0, 0, 0.5)"
 		    }]
 		  },
@@ -173,16 +399,16 @@
 		var myBarChart = {
 				  type: 'bar',
 				  data: {
-				    labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		    labels: [month[(setMonth-11) % 12], month[(setMonth-10) % 12], month[(setMonth-9) % 12], month[(setMonth-8) % 12], month[(setMonth-7) % 12], month[(setMonth-6) % 12], month[(setMonth-5) % 12], month[(setMonth-4) % 12],month[(setMonth-3) % 12], month[(setMonth-2) % 12], month[(setMonth-1) % 12], month[setMonth % 12]],
 				    datasets: [{
-				      label: 'Revenue',
-				      data: [12, 19, 3, 17, 6, 3, 7, 7, 9, 10, 14, 17],
+				      label: 'Profit',
+				      data: [oneP, twoP, threeP, fourP, fiveP, sixP, sevenP, eightP, nineP, tenP, elevP, twelP],
 				     
 				      backgroundColor: "rgba(104, 163, 221, 0.5)"
 				      
 				    }, {
-				      label: 'Expend',
-				      data: [2, 29, 5, 5, 2, 3, 10, 12, 19, 3, 17, 6],
+				      label: 'Cost',
+				      data: [one, two, three, four, five, six, seven, eight, nine, ten, elev, twel],
 				      backgroundColor: "rgba(245, 0, 0, 0.5)"
 				    }]
 				  },

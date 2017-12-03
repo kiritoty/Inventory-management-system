@@ -31,9 +31,12 @@ function comment() {
 	for(var i = comments.length-1; i > comments.length-6 ; i--) {
 		var div = document.getElementById("message");
 		var input = document.createElement("a");
-		var date = document.createElement("span");
+		var date = document.createElement("span");	
+		var block = document.createElement("div");
+		
 		input.className = "task-list";
-		input.innerHTML = comments[i][1];
+		block.innerHTML = comments[i][1];
+			
 		date.className = "badge";
 		if(comments[i][6] != d.getFullYear()){
 			date.innerHTML = d.getFullYear() - comments[i][6] + " year ago";
@@ -46,9 +49,12 @@ function comment() {
 		}else{
 			date.innerHTML = d.getMinutes() - comments[i][3] + " minute ago";
 		}
+		
 		div.appendChild(input);
-		input.appendChild(date);
-		//document.getElementById("Tasks_Panel-info").style.height = "20px*i"
+		input.appendChild(block);
+		block.appendChild(date);
+		
+		
 	}
 }
 
@@ -58,4 +64,3 @@ function openSales() {
 function openIncome() {
 	confirm("Total Income: ");
 }
-
