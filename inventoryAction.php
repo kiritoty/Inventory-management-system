@@ -103,7 +103,7 @@
 	      		$sql = "INSERT INTO sales(itemId,item,quantity,cost,revenue,profit,date,month,year)
 				VALUES ('$itemId','$itemName','$itemQuantity','$cost','$revenue','$profit','$itemDate','$itemMonth','$itemYear')";
 				if ($db->query($sql) === TRUE) {
-					$message = "id $itemId edited.";
+					$message = "id $itemId updated.";
 				} else {
 					$message = "Error: " . $sql . "<br>" . $db->error;
 				}

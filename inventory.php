@@ -29,7 +29,7 @@
 				<ul>
 					<li><a href="dashboard.php">Home</a></li>
 					<li><a href="comment.php">Message</a></li>
-					<li><a href="#">About</a></li>
+					<li><a href="reference.php" target="_blank">About</a></li>
 					<li><a href="logout.php">Logout</a></li>
 				</ul>
 			</nav>
@@ -42,7 +42,7 @@
 			</div>
 			<ul>
 				<li><h2 id="logo">Inventory Sales Management</h2></li>
-				<li><a href="#">Sales</a></li>
+				<li><a href="sales.php">Sales</a></li>
 				<li><a href="inventory.php">Inventory</a></li>
 				<li><a href="#">link3</a></li>
 			</ul>
@@ -52,21 +52,17 @@
 
 		<div id="main-area">
 			<div id="welcome">
-				<h1>Inventory</h1>
+				<h1>Welcome <?php echo $login_session; ?></h1>
 			</div>
 			<div id="addItem">
 				<button onclick="edit()">edit</button>
 				<button id="addBtn">Add Item</button>
 				<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-					<button name="edit">submit change</button>
-					<div id="Product_Panel"></div>
 					<div id="addModal" onclick="model()" class="modal">
 						<div class="modal-content">
 							<span class="close">&times;</span>
 							<div class="modal-body">
 									<table>
-										<input type="text" placeholder="id" name="id">
-										<br>
 										<input type="text" placeholder="itemId" name="itemId">
 										<br>
 										<input type="text" placeholder="itemName" name="item">
@@ -123,8 +119,11 @@
 			        modal.style.display = "none";
 			    }
 			}
-
 			</script>
+			
+			<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<div id="Product_Panel"><button name="edit">submit change</button></div>
+			</form>
 		</div>
 		</div>
 	</body>

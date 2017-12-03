@@ -43,7 +43,7 @@ function comment() {
 		}else if(comments[i][5] != (d.getMonth()+1)){
 			date.innerHTML = (d.getMonth()+1) - comments[i][5] + " month ago";
 		}else if(comments[i][4] != d.getDate()){
-			date.innerHTML = d.getDate() - comments[i][5] + " day ago";
+			date.innerHTML = d.getDate() - comments[i][4] + " day ago";
 		}else if(comments[i][2] != d.getHours()){
 			date.innerHTML = d.getHours() - comments[i][2] + " hour ago";
 		}else{

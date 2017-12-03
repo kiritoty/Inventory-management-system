@@ -55,7 +55,7 @@ function createTable() {
 			output.name = products[i][0] + index;
 			output.value = products[i][j];
 			output.readOnly = true;
-			output.className = "haha";
+			output.className = "table";
 			rowcol.appendChild(output);
 		}
 	}
@@ -91,6 +91,7 @@ function edit() {
 					break;
 			}
 			var output = document.getElementById(products[i][0] + "." + index);
+			output.style.backgroundColor = "lightyellow";
 			output.removeAttribute("readonly");
 		}
 	}

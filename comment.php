@@ -12,7 +12,7 @@
 
 <html>
 	<head>
-		<title>Dashboard</title>
+		<title>message</title>
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 		<link rel="stylesheet" type="text/css" href="css/comment.css">
 		<script>
@@ -27,7 +27,7 @@
 			<ul>
 				<li><a href="dashboard.php">Home</a></li>
 				<li><a href="comment.php">Message</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="reference.php" target="_blank">About</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 			
@@ -45,7 +45,7 @@
 			
 			<ul>
 				<li><h2 id="logo">Inventory Sales Management</h2></li>
-				<li><a href="#">Sales</a></li>
+				<li><a href="sales.php">Sales</a></li>
 				<li><a href="inventory.php">Inventory</a></li>
 				<li><a href="#">link3</a></li>
 			</ul>
@@ -54,6 +54,9 @@
 
 	<div id="block">
 		<div id="main-area">
+			<div id="welcome">
+				<h1>Welcome <?php echo $login_session; ?></h1>
+			</div>
 			<div id="title">
 				<h1>Message Board</h1>
 			</div>
