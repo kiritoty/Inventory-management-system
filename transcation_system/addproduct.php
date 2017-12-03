@@ -364,6 +364,12 @@
 							     <label>Qantity: </label>	
 							      <input type="number"  class="form-control" name="sale_qty">								  
 							</td>     
+					  </tr>	
+					  <tr>
+							<td>
+							     <label>Date: </label>	
+							      <input id="date" type="date"  class="form-control" name="sale_date">								  
+							</td>     
 					  </tr>					   
 				  </tbody>				
 				</table>    

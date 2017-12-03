@@ -51,7 +51,7 @@ function createTable() {
 					index = "itemYear";
 					break;
 			}
-			output.id = products[i][0] + "." + index;
+			output.id = products[i][0] + index;
 			output.name = products[i][0] + index;
 			output.value = products[i][j];
 			output.readOnly = true;
@@ -90,7 +90,7 @@ function edit() {
 					index = "itemYear";
 					break;
 			}
-			var output = document.getElementById(products[i][0] + "." + index);
+			var output = document.getElementById(products[i][0] + index);
 			output.style.backgroundColor = "lightyellow";
 			output.removeAttribute("readonly");
 		}

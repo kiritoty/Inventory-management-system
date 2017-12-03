@@ -56,8 +56,8 @@ function createTable() {
 					index = "year";
 					break;
 			}
-			output.id = products[i][0] + "." + index;
-			output.name = products[i][0] + "." + index;
+			output.id = products[i][0] + index;
+			output.name = products[i][0] + index;
 			output.value = products[i][j];
 			output.readOnly = true;
 			output.className = "table";
