@@ -18,7 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="css/inventory.css">
 		<script type="text/javascript">
 			var products = <?php echo json_encode( $rows ) ?>;
-		</script>	
+		</script>
 		<script src="js/dashboard.js"></script>
 		<script src="js/sales.js"></script>
 	</head>

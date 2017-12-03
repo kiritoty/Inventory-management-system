@@ -2,34 +2,23 @@ window.onload = createTable;
 
 function createTable() {
 	var table = document.createElement("table");
-	table.className = "blueTable";
-	var row1 = document.createElement("tr");
-	var head = table.createTHead();
-	var row1col1 = document.createElement("th");
+	var row1 = table.insertRow(0);
+	var row1col1 = row1.insertCell(0);
 	row1col1.innerHTML = "id";
-	var row1col2 = document.createElement("th");
+	var row1col2 = row1.insertCell(1);
 	row1col2.innerHTML = "Item Name";
-	var row1col3 = document.createElement("th");
+	var row1col3 = row1.insertCell(2);
 	row1col3.innerHTML = "# In-Stock";
-	var row1col4 = document.createElement("th");
+	var row1col4 = row1.insertCell(3);
 	row1col4.innerHTML = "Unit Price";
-	var row1col5 = document.createElement("th");
+	var row1col5 = row1.insertCell(4);
 	row1col5.innerHTML = "Sell Price";
-	var row1col6 = document.createElement("th");
+	var row1col6 = row1.insertCell(5);
 	row1col6.innerHTML = "Date";
-	var row1col7 = document.createElement("th");
+	var row1col7 = row1.insertCell(6);
 	row1col7.innerHTML = "Month";
-	var row1col8 = document.createElement("th");
+	var row1col8 = row1.insertCell(7);
 	row1col8.innerHTML = "Year";
-	head.appendChild(row1col1);
-	head.appendChild(row1col2);
-	head.appendChild(row1col3);
-	head.appendChild(row1col4);
-	head.appendChild(row1col5);
-	head.appendChild(row1col6);
-	head.appendChild(row1col7);
-	head.appendChild(row1col8);
-	table.appendChild(row1);
 	for(var i = 0; i < products.length; i++) {
 		var row = table.insertRow(i + 1);
 		for(var j = 0; j < 8; j++) {
@@ -66,7 +55,7 @@ function createTable() {
 			output.name = products[i][0] + index;
 			output.value = products[i][j];
 			output.readOnly = true;
-			output.className = "blueTable";
+			output.className = "table";
 			rowcol.appendChild(output);
 		}
 	}
