@@ -2,15 +2,15 @@ window.onload = createTable;
 
 function createTable() {
 	var table = document.createElement("table");
-	table.className = "blueTable";
-	var row1 = document.createElement("tr");
+
 	var head = table.createTHead();
+	var row1 = document.createElement("tr");
 	var row1col1 = document.createElement("th");
 	row1col1.innerHTML = "id";
 	var row1col2 = document.createElement("th");
 	row1col2.innerHTML = "Item Name";
 	var row1col3 = document.createElement("th");
-	row1col3.innerHTML = "# In-Stock";
+	row1col3.innerHTML = "#In-Stock";
 	var row1col4 = document.createElement("th");
 	row1col4.innerHTML = "Unit Price";
 	var row1col5 = document.createElement("th");
@@ -21,21 +21,21 @@ function createTable() {
 	row1col7.innerHTML = "Month";
 	var row1col8 = document.createElement("th");
 	row1col8.innerHTML = "Year";
-	head.appendChild(row1col1);
-	head.appendChild(row1col2);
-	head.appendChild(row1col3);
-	head.appendChild(row1col4);
-	head.appendChild(row1col5);
-	head.appendChild(row1col6);
-	head.appendChild(row1col7);
-	head.appendChild(row1col8);
-	row1.appendChild(head);
-	table.appendChild(row1);
+	row1.appendChild(row1col1);
+	row1.appendChild(row1col2);
+	row1.appendChild(row1col3);
+	row1.appendChild(row1col4);
+	row1.appendChild(row1col5);
+	row1.appendChild(row1col6);
+	row1.appendChild(row1col7);
+	row1.appendChild(row1col8);
+	head.appendChild(row1);
+	table.appendChild(head);
+	var tbody = table.createTBody();
 	for(var i = 0; i < products.length; i++) {
 		var row = document.createElement("tr");
-		table.appendChild(row);
 		for(var j = 0; j < 8; j++) {
-			var rowcol = document.createElement("th");
+			var rowcol = document.createElement("td");
 			row.appendChild(rowcol);
 			var output = document.createElement("input");
 			var index;
@@ -69,9 +69,10 @@ function createTable() {
 			output.name = products[i][0] + index;
 			output.value = products[i][j];
 			output.readOnly = true;
-			output.className = "blueTable";
+			output.className = "table";
 			rowcol.appendChild(output);
 		}
+		tbody.appendChild(row);
 	}
 	var div = document.getElementById("Product_Panel");
 	div.appendChild(table);

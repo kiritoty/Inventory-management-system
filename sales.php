@@ -15,7 +15,7 @@
 	<head>
 		<title>Inventory</title>
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
-		<link rel="stylesheet" type="text/css" href="css/inventory.css">
+		<link rel="stylesheet" type="text/css" href="css/sales.css">
 		<script type="text/javascript">
 			var products = <?php echo json_encode( $rows ) ?>;
 		</script>

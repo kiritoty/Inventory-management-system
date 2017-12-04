@@ -2,34 +2,50 @@ window.onload = createTable;
 
 function createTable() {
 	var table = document.createElement("table");
-	var row1 = table.insertRow(0);
-	var row1col1 = row1.insertCell(0);
-	row1col1.innerHTML = "itemId";
-	var row1col2 = row1.insertCell(1);
+	table.className = "cinereousTable";
+	table.style.width = "50%";
+	var head = table.createTHead();
+	var row1 = document.createElement("tr");
+	var row1col1 = document.createElement("th");
+	row1col1.innerHTML = "id";
+	var row1col2 = document.createElement("th");
 	row1col2.innerHTML = "Item Name";
-	var row1col3 = row1.insertCell(2);
+	var row1col3 = document.createElement("th");
 	row1col3.innerHTML = "quantity";
-	var row1col4 = row1.insertCell(3);
+	var row1col4 = document.createElement("th");
 	row1col4.innerHTML = "cost";
-	var row1col5 = row1.insertCell(4);
+	var row1col5 = document.createElement("th");
 	row1col5.innerHTML = "revenue";
-	var row1col6 = row1.insertCell(5);
+	var row1col6 = document.createElement("th");
 	row1col6.innerHTML = "profit";
-	var row1col7 = row1.insertCell(6);
-	row1col7.innerHTML = "Date";
-	var row1col8 = row1.insertCell(7);
-	row1col8.innerHTML = "Month";
-	var row1col9 = row1.insertCell(8);
-	row1col9.innerHTML = "Year";
+	var row1col7 = document.createElement("th");
+	row1col7.innerHTML = "date";
+	var row1col8 = document.createElement("th");
+	row1col8.innerHTML = "month";
+	var row1col9 = document.createElement("th");
+	row1col9.innerHTML = "year";
+	row1.appendChild(row1col1);
+	row1.appendChild(row1col2);
+	row1.appendChild(row1col3);
+	row1.appendChild(row1col4);
+	row1.appendChild(row1col5);
+	row1.appendChild(row1col6);
+	row1.appendChild(row1col7);
+	row1.appendChild(row1col8);
+	row1.appendChild(row1col9);
+	head.appendChild(row1);
+	table.appendChild(head);
+	var tbody = table.createTBody();
 	for(var i = 0; i < products.length; i++) {
-		var row = table.insertRow(i + 1);
+		var row = document.createElement("tr");
 		for(var j = 1; j < 10; j++) {
-			var rowcol = row.insertCell(j-1);
+			var rowcol = document.createElement("td");
+			row.appendChild(rowcol);
 			var output = document.createElement("input");
 			var index;
 			switch(j) {
 				case 1:
-					index = "itemId";
+					index = "myId";
 					break;
 				case 2:
 					index = "itemName";
@@ -63,6 +79,7 @@ function createTable() {
 			output.className = "table";
 			rowcol.appendChild(output);
 		}
+		tbody.appendChild(row);
 	}
 	var div = document.getElementById("Product_Panel");
 	div.appendChild(table);
