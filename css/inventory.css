@@ -14,8 +14,6 @@
 	left:200px;
 	transition: all 500ms linear;
 	background-color:rgb(234, 234, 234);
-	
-	
 }
 #main-area.active {
 	left:0px;
@@ -39,7 +37,7 @@
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 30px;
+	padding: 30px;
     border: 1px solid #888;
     width: 20%;
 }
@@ -157,22 +155,6 @@
 	width: 80%;
 }
 
-#Product_Panel table{
-	border: solid;
-	border-collapse: collapse;
-	width: 85%;
-	overflow-x: auto;
-}
-
-#Product_Panel th{
-	border: solid;
-	border-collapse: collapse;
-}
-
-#Product_Panel td{
-	border: solid;
-	border-collapse: collapse;
-}
 
 #Tasks_Panel h4 {
 	padding-left: 20px;
@@ -222,6 +204,7 @@ table.blueTable {
   width: 75%;
   text-align: left;
   border-collapse: collapse;
+  overflow-x: auto;
 }
 table.blueTable td, table.blueTable th {
   border: 1px solid #AAAAAA;

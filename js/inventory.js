@@ -2,7 +2,7 @@ window.onload = createTable;
 
 function createTable() {
 	var table = document.createElement("table");
-
+	table.className = "blueTable";
 	var head = table.createTHead();
 	var row1 = document.createElement("tr");
 	var row1col1 = document.createElement("th");

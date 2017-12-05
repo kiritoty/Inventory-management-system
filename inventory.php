@@ -60,25 +60,20 @@
 					<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						<div id="addModal" onclick="model()" class="modal">
 							<div class="modal-content">
-								<span class="close">&times;</span>
+    							<span class="close">&times;</span>
 								<div class="modal-body">
-										<table>
-											<input type="text" placeholder="itemId" name="itemId">
-											<br>
-											<input type="text" placeholder="itemName" name="item">
-											<br>
-											<input type="text" placeholder="storage" name="storage">
-											<br>
-											<input type="text" placeholder="unitPrice" name="unitPrice">
-											<br>
-											<input type="text" placeholder="sellPrice" name="sellPrice">
-											<br>
-											<input type="date" placeholder="date" name="date">
-											<br>
-											<input type="text" placeholder="quantity" name="quantity">
-										</table>
-										<button name="add">add</button>
-										<button name="delete">delete</button>
+									<table>
+										<tr><td>Item Id: </td><td><input type="text" placeholder="itemId" name="itemId"></td></tr>
+										<tr><td>Item Name: </td><td><input type="text" placeholder="itemName" name="item"></td></tr>
+										<tr><td>#In-Stock: </td><td><input type="text" placeholder="storage" name="storage"></td></tr>
+										<tr><td>Unit Price: </td><td><input type="text" placeholder="unitPrice" name="unitPrice"></td></tr>
+										<tr><td>Sell Price: </td><td><input type="text" placeholder="sellPrice" name="sellPrice"></td></tr>
+										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
+										<tr><td>Quantitiy: </td><td><input type="text" placeholder="quantity" name="quantity"></td></tr>
+									</table>
+									<br>
+									<button id="addBtn" name="add">Add</button>
+									<button id="addBtn" name="delete">Delete</button>
 								</div>
 							</div>
 						</div>
@@ -98,22 +93,20 @@
 								<span class="close">&times;</span>
 								<div class="modal-body">
 									<table>
-										<input type="text" placeholder="itemId" name="itemId">
-										<br>
-										<input type="text" placeholder="itemName" name="item">
-										<br>
-										<input type="date" placeholder="date" name="date">
-										<br>
-										<input type="text" placeholder="quantity" name="quantity">
+										<tr><td>Item Id: </td><td><input type="text" placeholder="itemId" name="itemId"></td></tr>
+										<tr><td>Item Name: </td><td><input type="text" placeholder="itemName" name="item"></td></tr>
+										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
+										<tr><td>Quantity: </td><td><input type="text" placeholder="quantity" name="quantity"></td></tr>
 									</table>
-									<button name="updateSale">Update Sale</button>
+									<br>
+									<button id="editBtn" name="updateSale">Update Sale</button>
 								</div>
 							</div>
 						</div>
 						<div>
 							<?php echo $message; ?>
 						</div>
-						<br><br>
+						<br>
 					</div>	
 				</form>
 				
