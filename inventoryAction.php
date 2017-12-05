@@ -7,9 +7,13 @@
 	      	$itemStorage = mysqli_real_escape_string($db,$_POST['storage']); 
 	      	$itemUnitPrice = mysqli_real_escape_string($db,$_POST['unitPrice']);
 	      	$itemSellPrice = mysqli_real_escape_string($db,$_POST['sellPrice']); 
-	      	$itemDate = mysqli_real_escape_string($db,$_POST['date']); 
-	      	$itemMonth = mysqli_real_escape_string($db,$_POST['month']); 
-	      	$itemYear = mysqli_real_escape_string($db,$_POST['year']); 
+	      	$thedate = date('m/d/Y', strtotime($_POST['date']));
+	      	$day = substr($thedate, 3, 2); 
+	      	$month = substr($thedate, 0, 2); 
+	      	$year = substr($thedate, 6, 4); 
+	      	$itemDate = mysqli_real_escape_string($db,$day); 
+	      	$itemMonth = mysqli_real_escape_string($db,$month); 
+	      	$itemYear = mysqli_real_escape_string($db,$year); 
 			$sql = "INSERT INTO product (item,storage,unitPrice,sellPrice,date,month,year)
 			VALUES ('$itemName','$itemStorage','$itemUnitPrice','$itemSellPrice','$itemDate','$itemMonth','$itemYear')";
 			if ($db->query($sql) === TRUE) {
@@ -49,16 +53,15 @@
 				$theUnitPrice = $rows[$i][0].'itemUnitPrice';
 				$theSellPrice = $rows[$i][0].'itemSellPrice';
 				$theDate = $rows[$i][0].'itemDate';
-				$theMonth = $rows[$i][0].'itemMonth';
-				$theYear = $rows[$i][0].'itemYear';
 				$id = mysqli_real_escape_string($db,$_POST[$theId]);
 		      	$itemName = mysqli_real_escape_string($db,$_POST[$theItem]);
 		      	$itemStorage = mysqli_real_escape_string($db,$_POST[$theStorage]); 
 		      	$itemUnitPrice = mysqli_real_escape_string($db,$_POST[$theUnitPrice]);
 		      	$itemSellPrice = mysqli_real_escape_string($db,$_POST[$theSellPrice]); 
 		      	$itemDate = mysqli_real_escape_string($db,$_POST[$theDate]); 
-		      	$itemMonth = mysqli_real_escape_string($db,$_POST[$theMonth]); 
-		      	$itemYear = mysqli_real_escape_string($db,$_POST[$theYear]); 
+		      	$day = substr($itemDate, 3, 2); 
+		      	$month = substr($itemDate, 0, 2); 
+		      	$year = substr($itemDate, 6, 4);
 	    		$sql = "SELECT * FROM product WHERE id = '$id'";
 		      	$result = mysqli_query($db,$sql);
 		      	$row = mysqli_fetch_array($result,MYSQLI_ASSOC); 
@@ -71,12 +74,12 @@
 						    storage = '$itemStorage', 
 						    unitPrice = '$itemUnitPrice', 
 						    sellPrice = '$itemSellPrice', 
-						    date = '$itemDate',
-						    month = '$itemMonth',
-						    year = '$itemYear'
+						    date = '$day',
+						    month = '$month',
+						    year = '$year'
 						  	WHERE id = '$id'";
 					if ($db->query($sql) === TRUE) {
-						$message = "submit changed.";
+						$message = "change submitted.";
 					} else {
 						$message = "Error: " . $sql . "<br>" . $db->error;
 					}
@@ -84,10 +87,11 @@
 	   		}
 	   		header("Refresh:1");
     }else if(isset($_POST['updateSale'])){
-	      	$itemName = mysqli_real_escape_string($db,$_POST['item']);
-	      	$itemDate = mysqli_real_escape_string($db,$_POST['date']); 
-	      	$itemMonth = mysqli_real_escape_string($db,$_POST['month']); 
-	      	$itemYear = mysqli_real_escape_string($db,$_POST['year']); 
+    		$itemDate = date('m/d/Y', strtotime($_POST['date']));
+	      	$day = substr($itemDate, 3, 2); 
+	      	$month = substr($itemDate, 0, 2); 
+	      	$year = substr($itemDate, 6, 4);
+	      	$itemName = mysqli_real_escape_string($db,$_POST['item']); 
 	      	$itemQuantity = mysqli_real_escape_string($db,$_POST['quantity']);
 	      	$itemId = mysqli_real_escape_string($db,$_POST['itemId']); 
     		$sql = "SELECT * FROM product WHERE id = '$itemId'";
@@ -101,7 +105,7 @@
 	      		$revenue = $row["sellPrice"] * $itemQuantity;
 	      		$profit = $revenue - $cost;
 	      		$sql = "INSERT INTO sales(itemId,item,quantity,cost,revenue,profit,date,month,year)
-				VALUES ('$itemId','$itemName','$itemQuantity','$cost','$revenue','$profit','$itemDate','$itemMonth','$itemYear')";
+				VALUES ('$itemId','$itemName','$itemQuantity','$cost','$revenue','$profit','$day','$month','$year')";
 				if ($db->query($sql) === TRUE) {
 					$message = "id $itemId updated.";
 				} else {

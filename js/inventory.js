@@ -17,24 +17,18 @@ function createTable() {
 	row1col5.innerHTML = "Sell Price";
 	var row1col6 = document.createElement("th");
 	row1col6.innerHTML = "Date";
-	var row1col7 = document.createElement("th");
-	row1col7.innerHTML = "Month";
-	var row1col8 = document.createElement("th");
-	row1col8.innerHTML = "Year";
 	row1.appendChild(row1col1);
 	row1.appendChild(row1col2);
 	row1.appendChild(row1col3);
 	row1.appendChild(row1col4);
 	row1.appendChild(row1col5);
 	row1.appendChild(row1col6);
-	row1.appendChild(row1col7);
-	row1.appendChild(row1col8);
 	head.appendChild(row1);
 	table.appendChild(head);
 	var tbody = table.createTBody();
 	for(var i = 0; i < products.length; i++) {
 		var row = document.createElement("tr");
-		for(var j = 0; j < 8; j++) {
+		for(var j = 0; j < 6; j++) {
 			var rowcol = document.createElement("td");
 			row.appendChild(rowcol);
 			var output = document.createElement("input");
@@ -58,29 +52,29 @@ function createTable() {
 				case 5:
 					index = "itemDate";
 					break;
-				case 6:
-					index = "itemMonth";
-					break;
-				case 7:
-					index = "itemYear";
-					break;
 			}
 			output.id = products[i][0] + index;
 			output.name = products[i][0] + index;
-			output.value = products[i][j];
+			if(j<5){
+				output.value = products[i][j];
+			}else{
+				output.value = products[i][j+1] + "/" + products[i][j] + "/" + products[i][j+2];
+			}
 			output.readOnly = true;
 			output.className = "table";
 			rowcol.appendChild(output);
 		}
 		tbody.appendChild(row);
 	}
+	
+	
 	var div = document.getElementById("Product_Panel");
 	div.appendChild(table);
 }
 
 function edit() {
 	for(var i = 0; i < products.length; i++) {
-		for(var j = 1; j < 8; j++) {
+		for(var j = 1; j < 6; j++) {
 			var index;
 			switch(j) {
 				case 1:
@@ -97,12 +91,6 @@ function edit() {
 					break;
 				case 5:
 					index = "itemDate";
-					break;
-				case 6:
-					index = "itemMonth";
-					break;
-				case 7:
-					index = "itemYear";
 					break;
 			}
 			var output = document.getElementById(products[i][0] + index);

@@ -49,83 +49,111 @@
 		</div>
 
 		<div id="block">
-
-		<div id="main-area">
-			<div id="welcome">
-				<h1>Welcome <?php echo $login_session; ?></h1>
-			</div>
-			<div id="addItem">
-				<button onclick="edit()">edit</button>
-				<button id="addBtn">Add Item</button>
+			<div id="main-area">
+				<div id="welcome">
+					<h1>Welcome <?php echo $login_session; ?></h1>
+				</div>
+				<div id="addItem">
+					<button id="editBtn" onclick="edit()">Edit</button>
+					<button id="addBtn" class="Btn">Add/Delete Item</button>
+					<button id="updateBtn" class="Btn">Update Sale</button>
+					<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+						<div id="addModal" onclick="model()" class="modal">
+							<div class="modal-content">
+								<span class="close">&times;</span>
+								<div class="modal-body">
+										<table>
+											<input type="text" placeholder="itemId" name="itemId">
+											<br>
+											<input type="text" placeholder="itemName" name="item">
+											<br>
+											<input type="text" placeholder="storage" name="storage">
+											<br>
+											<input type="text" placeholder="unitPrice" name="unitPrice">
+											<br>
+											<input type="text" placeholder="sellPrice" name="sellPrice">
+											<br>
+											<input type="date" placeholder="date" name="date">
+											<br>
+											<input type="text" placeholder="quantity" name="quantity">
+										</table>
+										<button name="add">add</button>
+										<button name="delete">delete</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<?php echo $message; ?>
+						</div>
+					</form>
+				</div>
+				
+				<br>
+				
 				<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-					<div id="addModal" onclick="model()" class="modal">
-						<div class="modal-content">
-							<span class="close">&times;</span>
-							<div class="modal-body">
+					<div id="Product_Panel">
+						<button name="edit" id="editBtn">Submit Change</button>
+						<div id="updateModal" onclick="model()" class="modal">
+							<div class="modal-content">
+								<span class="close">&times;</span>
+								<div class="modal-body">
 									<table>
 										<input type="text" placeholder="itemId" name="itemId">
 										<br>
 										<input type="text" placeholder="itemName" name="item">
 										<br>
-										<input type="text" placeholder="storage" name="storage">
-										<br>
-										<input type="text" placeholder="unitPrice" name="unitPrice">
-										<br>
-										<input type="text" placeholder="sellPrice" name="sellPrice">
-										<br>
-										<input type="text" placeholder="date" name="date">
-										<br>
-										<input type="text" placeholder="month" name="month">
-										<br>
-										<input type="text" placeholder="year" name="year">
+										<input type="date" placeholder="date" name="date">
 										<br>
 										<input type="text" placeholder="quantity" name="quantity">
 									</table>
-									<button name="add">add</button>
-									<button name="delete">delete</button>
-									<button name="updateSale">update sales</button>
+									<button name="updateSale">Update Sale</button>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div>
-						<?php echo $message; ?>
-					</div>
+						<div>
+							<?php echo $message; ?>
+						</div>
+						<br><br>
+					</div>	
 				</form>
+				
+				
+				<script>
+					// Get the modal
+					var modal = document.getElementsByClassName("modal");
+					
+					// Get the button that opens the modal
+					var btn = document.getElementsByClassName("Btn");
+					
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close");
+					
+					// When the user clicks the button, open the modal 
+					btn[0].onclick = function() {
+					    modal[0].style.display = "block";
+					}
+					
+					btn[1].onclick = function() {
+					    modal[1].style.display = "block";
+					}
+					
+					// When the user clicks on <span> (x), close the modal
+					span[0].onclick = function() {
+					    modal[0].style.display = "none";
+					}
+					
+					span[1].onclick = function() {
+					    modal[1].style.display = "none";
+					}
+					
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+					    if (event.target == modal) {
+					        modal.style.display = "none";
+					    }
+					}
+				</script>
 			</div>
-			<br>
-			<script>
-			// Get the modal
-			var modal = document.getElementById("addModal");
-			
-			// Get the button that opens the modal
-			var btn = document.getElementById("addBtn");
-			
-			// Get the <span> element that closes the modal
-			var span = document.getElementsByClassName("close")[0];
-			
-			// When the user clicks the button, open the modal 
-			btn.onclick = function() {
-			    modal.style.display = "block";
-			}
-			
-			// When the user clicks on <span> (x), close the modal
-			span.onclick = function() {
-			    modal.style.display = "none";
-			}
-			
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) {
-			    if (event.target == modal) {
-			        modal.style.display = "none";
-			    }
-			}
-			</script>
-			
-			<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-				<div id="Product_Panel"><button name="edit">submit change</button></div>
-			</form>
-		</div>
 		</div>
 	</body>
-
 </html>

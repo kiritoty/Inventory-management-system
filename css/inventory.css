@@ -67,33 +67,111 @@
 	float: left;
 	overflow-x: auto;
 	padding: 20px;
-	width: 70%;
+	width: 80%;
+}
+
+#editBtn {
+	display: inline-block;
+	padding: 8px 10px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 3px #999;
+}
+
+#editBtn:hover {
+	background-color: #3e8e41
+}
+
+#editBtn:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#updateBtn {
+	display: inline-block;
+	padding: 8px 10px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 3px #999;
+}
+
+#updateBtn:hover {
+	background-color: #3e8e41
+}
+
+#updateBtn:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#addBtn {
+	display: inline-block;
+	padding: 8px 10px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: tomato;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 3px #999;
+}
+
+#addBtn:hover {
+	background-color: tomato
+}
+
+#addBtn:active {
+	background-color: tomato;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 
 #Product_Panel {
 	margin-top: 20px;
 	margin-left: 40px;
 	margin-right: 40px;
-	width: 80%;
 	box-shadow: 10px 10px 5px #888888;
 	background-color: white;
 	float: left;
 	overflow-x: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding: 20px;
+	width: 80%;
 }
 
 #Product_Panel table{
 	border: solid;
 	border-collapse: collapse;
-	width: 90%;
-	margin: auto;
+	width: 85%;
+	overflow-x: auto;
+}
+
+#Product_Panel th{
+	border: solid;
+	border-collapse: collapse;
 }
 
 #Product_Panel td{
 	border: solid;
 	border-collapse: collapse;
-	width: 5%;
 }
 
 #Tasks_Panel h4 {
