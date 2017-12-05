@@ -9,13 +9,11 @@
 	position: absolute;
 	padding-top: 20px;
 	width: 100%;
-	height: 100%;
+	height: 87.5%;
 	top: 70px;
 	left:200px;
 	transition: all 500ms linear;
 	background-color:rgb(234, 234, 234);
-	
-	
 }
 #main-area.active {
 	left:0px;
