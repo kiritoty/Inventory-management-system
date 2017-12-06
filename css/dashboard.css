@@ -1,7 +1,11 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: sans-serif;	
+	font-family: sans-serif;
+}
+
+body{
+	background: url(../img/background.gif);
 }
 
 #side-navagate-bar {
@@ -96,10 +100,9 @@
 	top: 70px;
 	left:200px;
 	transition: all 500ms linear;
-	background-color:rgb(234, 234, 234);
-	
-	
+	background:transparent;
 }
+
 #main-area.active {
 	left:0px;
 }

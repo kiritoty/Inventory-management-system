@@ -13,7 +13,7 @@
 	top: 70px;
 	left:200px;
 	transition: all 500ms linear;
-	background-color:rgb(234, 234, 234);
+	background:transparent;
 }
 #main-area.active {
 	left:0px;
@@ -22,12 +22,12 @@
 #Product_Panel {
 	margin-top: 20px;
 	margin-right: 40px;
-	box-shadow: 10px 10px 5px #888888;
 	background-color: white;
 	float: left;
 	overflow-x: auto;
 	padding: 20px;
-	width: 85%;
+	width: 90%;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 #Product_Panel table{
