@@ -34,11 +34,10 @@
 }
 
 .modal-content {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     margin: auto;
 	padding: 30px;
     border: 1px solid #888;
-    border-radius: 80px;
     width: 20%;
     box-shadow: 10px 10px 5px black;
 }

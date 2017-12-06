@@ -56,6 +56,7 @@
 				<div id="addItem">
 					<button id="editBtn" onclick="edit()">Edit</button>
 					<button id="addBtn" class="Btn">Add Item</button>
+					<button id="addBtn" class="Btn">Delete Item</button>
 					<button id="updateBtn" class="Btn">Update Sale</button>
 					<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						<div id="addModal" onclick="model()" class="modal">
@@ -71,6 +72,20 @@
 									</table>
 									<br>
 									<button id="addBtn" name="add">Add</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<?php echo $message; ?>
+						</div>
+						<div id="deleteModal" onclick="model()" class="modal">
+							<div class="modal-content">
+    							<span class="close">&times;</span>
+								<div class="modal-body">
+									<table>	
+										<tr><td>Item ID: </td><td><input type="text" placeholder="itemId" name="itemId"></td></tr>
+									</table>
+									<br>
 									<button id="addBtn" name="delete">Delete</button>
 								</div>
 							</div>
@@ -127,6 +142,11 @@
 					    modal[1].style.display = "block";
 					}
 					
+					btn[2].onclick = function() {
+					    modal[2].style.display = "block";
+					}
+					
+					
 					// When the user clicks on <span> (x), close the modal
 					span[0].onclick = function() {
 					    modal[0].style.display = "none";
@@ -134,6 +154,10 @@
 					
 					span[1].onclick = function() {
 					    modal[1].style.display = "none";
+					}
+					
+					span[2].onclick = function() {
+					    modal[2].style.display = "none";
 					}
 					
 					// When the user clicks anywhere outside of the modal, close it

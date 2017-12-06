@@ -38,6 +38,7 @@
 					$message = "Error: " . $sql . "<br>" . $db->error;
 				}
 	      	}
+	      	header("Refresh:1");
 	   }else if(isset($_POST['edit'])){
 	   		$message = "haha";
 	   		$sql = 'SELECT * FROM product';
