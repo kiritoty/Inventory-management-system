@@ -55,15 +55,14 @@
 				</div>
 				<div id="addItem">
 					<button id="editBtn" onclick="edit()">Edit</button>
-					<button id="addBtn" class="Btn">Add/Delete Item</button>
+					<button id="addBtn" class="Btn">Add Item</button>
 					<button id="updateBtn" class="Btn">Update Sale</button>
 					<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						<div id="addModal" onclick="model()" class="modal">
 							<div class="modal-content">
     							<span class="close">&times;</span>
 								<div class="modal-body">
-									<table>
-										<tr><td>Item Id: </td><td><input type="text" placeholder="itemId" name="itemId"></td></tr>
+									<table>	
 										<tr><td>Item Name: </td><td><input type="text" placeholder="itemName" name="item"></td></tr>
 										<tr><td>#In-Stock: </td><td><input type="text" placeholder="storage" name="storage"></td></tr>
 										<tr><td>Unit Price: </td><td><input type="text" placeholder="unitPrice" name="unitPrice"></td></tr>
@@ -94,8 +93,8 @@
 									<table>
 										<tr><td>Item Id: </td><td><input type="text" placeholder="itemId" name="itemId"></td></tr>
 										<tr><td>Item Name: </td><td><input type="text" placeholder="itemName" name="item"></td></tr>
-										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
 										<tr><td>Quantity: </td><td><input type="text" placeholder="quantity" name="quantity"></td></tr>
+										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
 									</table>
 									<br>
 									<button id="editBtn" name="updateSale">Update Sale</button>
@@ -103,7 +102,6 @@
 							</div>
 						</div>
 						<div>
-							<?php echo $message; ?>
 						</div>
 						<br>
 					</div>	

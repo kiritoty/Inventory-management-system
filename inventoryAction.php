@@ -23,17 +23,17 @@
 				$message = "Error: " . $sql . "<br>" . $db->error;
 			}
       	}else if(isset($_POST['delete'])){
-      		$itemName = mysqli_real_escape_string($db,$_POST['item']);
-      	  	$sql = "SELECT * FROM product WHERE item = '$itemName'";
+	      	$itemId = mysqli_real_escape_string($db,$_POST['itemId']); 
+      	  	$sql = "SELECT * FROM product WHERE id = '$itemId'";
 	      	$result = mysqli_query($db,$sql);
 	      	$row = mysqli_fetch_array($result,MYSQLI_ASSOC); 
 	      	$count = mysqli_num_rows($result);
 	      	if($count == 0) {
 	      		$message = "item not exist";
 	      	}else {
-			    $sql = "DELETE FROM product WHERE item = '$itemName'";
+			    $sql = "DELETE FROM product WHERE id = '$itemId'";
 				if ($db->query($sql) === TRUE) {
-					$message = "item $itemName delete.";
+					$message = "item $itemId delete.";
 				} else {
 					$message = "Error: " . $sql . "<br>" . $db->error;
 				}
@@ -59,8 +59,8 @@
 		      	$itemUnitPrice = mysqli_real_escape_string($db,$_POST[$theUnitPrice]);
 		      	$itemSellPrice = mysqli_real_escape_string($db,$_POST[$theSellPrice]); 
 		      	$itemDate = mysqli_real_escape_string($db,$_POST[$theDate]); 
+				$month = substr($itemDate, 0, 2); 
 		      	$day = substr($itemDate, 3, 2); 
-		      	$month = substr($itemDate, 0, 2); 
 		      	$year = substr($itemDate, 6, 4);
 	    		$sql = "SELECT * FROM product WHERE id = '$id'";
 		      	$result = mysqli_query($db,$sql);
@@ -104,10 +104,14 @@
 	      		$cost = $row["unitPrice"] * $itemQuantity;
 	      		$revenue = $row["sellPrice"] * $itemQuantity;
 	      		$profit = $revenue - $cost;
-	      		$sql = "INSERT INTO sales(itemId,item,quantity,cost,revenue,profit,date,month,year)
-				VALUES ('$itemId','$itemName','$itemQuantity','$cost','$revenue','$profit','$day','$month','$year')";
+				$leave = $row["storage"] - $itemQuantity;
+	      		$sql = "UPDATE product SET storage='$leave'";
 				if ($db->query($sql) === TRUE) {
+					$sql = "INSERT INTO sales(itemId,item,quantity,cost,revenue,profit,date,month,year)
+					VALUES ('$itemId','$itemName','$itemQuantity','$cost','$revenue','$profit','$day','$month','$year')";
+					$db->query($sql);
 					$message = "id $itemId updated.";
+					header("Refresh:1");
 				} else {
 					$message = "Error: " . $sql . "<br>" . $db->error;
 				}

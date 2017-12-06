@@ -58,9 +58,16 @@ function createTable() {
 			if(j<5){
 				output.value = products[i][j];
 			}else{
-				var formattedmonth = ("0" + products[i][j+1]).slice(-2);
-				var formattedday = ("0" + products[i][j]).slice(-2);
-				output.value = formattedmonth + "/" + formattedday + "/" + products[i][j+2];
+				var day = products[i][j];
+				var month = products[i][j+1];
+				var year = products[i][j+2];
+				if (day < 10){
+					day = "0" + day;
+				}
+				if (month < 10){
+					month = "0" + month;
+				}
+				output.value = month + "/" + day + "/" + products[i][j+2];
 			}
 			output.readOnly = true;
 			output.className = "table";
