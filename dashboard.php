@@ -78,17 +78,17 @@
 				
 				<div id="mini_nav">
 					<div id="mini_board">
-						<div class = "mini_font"><a href="javascript:openSales()">Sales</a></div>
+						<div class = "mini_font"><a href="sales.php">Sales</a></div>
 						<img src="img/sales.png"/>
 					</div>
 					
 					<div id="mini_board">
-						<div class = "mini_font"><a href="javascript:openIncome()">Income</a></div>
+						<div class = "mini_font"><a href="inventory.php">Income</a></div>
 						<img src="img/income.png"/>
 					</div>
 					
 					<div id="mini_board">
-						<div class = "mini_font"><a href="#">OnBoard</a></div>
+						<div class = "mini_font"><a href="comment.php">OnBoard</a></div>
 						<img src="img/chat.png" />
 					</div>
 					
@@ -135,99 +135,99 @@
 
 				if(sales[i][8] == monthNumber[(setMonth % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth % 12)] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						twel+= parseInt(sales[i][4]);
+						twel+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth % 12)] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						twel+= parseInt(sales[i][4]);
+						twel+= parseFloat(sales[i][4]);
 					}
 				}
 				
 				if(sales[i][8] == monthNumber[((setMonth - 1) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 1) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						elev+= sales[i][4];
+						elev+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 1) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						elev+= sales[i][4];
+						elev+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 2) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 2) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						ten+= sales[i][4];
+						ten+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 2) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						ten+= sales[i][4];
+						ten+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 3) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 3) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						nine+= sales[i][4];
+						nine+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 3) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						nine+= sales[i][4];
+						nine+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 4) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 4) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						eight+= sales[i][4];
+						eight+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 4) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						eight+= sales[i][4];
+						eight+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 5) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 5) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						seven+= sales[i][4];
+						seven+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 5) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						seven+= sales[i][4];
+						seven+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 6) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 6) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						six+= sales[i][4];
+						six+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 6) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						six+= sales[i][4];
+						six+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 7) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 7) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						five+= sales[i][4];
+						five+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 7) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						five+= sales[i][4];
+						five+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 8) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 8) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						four+= sales[i][4];
+						four+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 8) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						four+= sales[i][4];
+						four+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 9) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 9) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						three+= sales[i][4];
+						three+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 9) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						three+= sales[i][4];
+						three+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 10) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 10) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						two+= sales[i][4];
+						two+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 10) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						two+= sales[i][4];
+						two+= parseFloat(sales[i][4]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 11) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 11) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						one+= sales[i][4];
+						one+= parseFloat(sales[i][4]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 11) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						one+= sales[i][4];
+						one+= parseFloat(sales[i][4]);
 					}
 				}
 				
@@ -241,99 +241,99 @@
 
 				if(sales[i][8] == monthNumber[(setMonth % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth % 12)] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						twelP+= parseInt(sales[i][6]);
+						twelP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth % 12)] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						twelP+= parseInt(sales[i][6]);
+						twelP+= parseFloat(sales[i][6]);
 					}
 				}
 				
 				if(sales[i][8] == monthNumber[((setMonth - 1) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 1) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						elevP+= sales[i][6];
+						elevP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 1) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						elevP+= sales[i][6];
+						elevP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 2) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 2) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						tenP+= sales[i][6];
+						tenP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 2) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						tenP+= sales[i][6];
+						tenP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 3) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 3) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						nineP+= sales[i][6];
+						nineP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 3) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						nineP+= sales[i][6];
+						nineP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 4) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 4) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						eightP+= sales[i][6];
+						eightP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 4) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						eightP+= sales[i][6];
+						eightP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 5) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 5) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						sevenP+= sales[i][6];
+						sevenP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 5) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						sevenP+= sales[i][6];
+						sevenP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 6) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 6) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						sixP+= sales[i][6];
+						sixP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 6) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						sixP+= sales[i][6];
+						sixP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 7) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 7) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						fiveP+= sales[i][6];
+						fiveP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 7) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						fiveP+= sales[i][6];
+						fiveP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 8) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 8) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						fourP+= sales[i][6];
+						fourP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 8) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						fourP+= sales[i][6];
+						fourP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 9) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 9) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						threeP+= sales[i][6];
+						threeP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 9) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						threeP+= sales[i][6];
+						threeP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 10) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 10) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						twoP+= sales[i][6];
+						twoP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 10) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						twoP+= sales[i][6];
+						twoP+= parseFloat(sales[i][6]);
 					}
 				}
 				if(sales[i][8] == monthNumber[((setMonth - 11) % 12)] ) {
 					if(valueMonth - monthNumber[(setMonth - 11) % 12] >= 0 && sales[i][9] == myDate.getFullYear()) {
-						oneP+= sales[i][6];
+						oneP+= parseFloat(sales[i][6]);
 					}
 					if(valueMonth - monthNumber[(setMonth - 11) % 12] < 0 && sales[i][9] == myDate.getFullYear()-1) {
-						oneP+= sales[i][6];
+						oneP+= parseFloat(sales[i][6]);
 					}
 				}
 				
