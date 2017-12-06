@@ -69,7 +69,6 @@
 										<tr><td>Unit Price: </td><td><input type="text" placeholder="unitPrice" name="unitPrice"></td></tr>
 										<tr><td>Sell Price: </td><td><input type="text" placeholder="sellPrice" name="sellPrice"></td></tr>
 										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
-										<tr><td>Quantitiy: </td><td><input type="text" placeholder="quantity" name="quantity"></td></tr>
 									</table>
 									<br>
 									<button id="addBtn" name="add">Add</button>
