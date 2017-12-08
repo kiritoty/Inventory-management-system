@@ -66,6 +66,10 @@ Use MySQL database.
 
 This project is base on web programming course, so we may not update what we have in the further .
 
+## License
+
+This project is licensed under the MIT License
+
 ## Authors
 
 * **Zhenyu Yan**
@@ -73,8 +77,6 @@ This project is base on web programming course, so we may not update what we hav
 * **Yan Lin**
 * **Xinzhi Zou**
 
+wxfkkrrt@gmail.com
 
-## License
-
-This project is licensed under the MIT License
-
+12-08-2017
